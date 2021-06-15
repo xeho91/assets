@@ -25,6 +25,7 @@ export default {
 	ignoreWarnings: [
 		// Ignore warnings due to yargs dynamic module loading
 		{ module: /node_modules\/yargs/ },
+		{ module: /node_modules\/svgo/ },
 	],
 
 	module: {

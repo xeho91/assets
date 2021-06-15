@@ -1,3 +1,8 @@
+declare module "*.svelte" {
+	const value: any;
+	export default value;
+}
+
 /// <reference types="svelte" />
 
 declare interface AssetOptions {
