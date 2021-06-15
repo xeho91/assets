@@ -24,6 +24,20 @@ export default {
 
 	module: {
 		rules: [
+			{
+				test: /\.svelte$/,
+				exclude: /node_modules/,
+				use: {
+					loader: "svelte-loader",
+					options: {
+						preprocess: SveltePreprocess({}),
+						emitCss: false,
+						compilerOptions: {
+							generate: "ssr",
+						},
+					},
+				},
+			},
 		],
 	},
 
