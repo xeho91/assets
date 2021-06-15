@@ -49,6 +49,9 @@
   "dependencies": {
   },
   "devDependencies": {
+    "@types/node": "^15.12.2",
     "standard-changelog": "^2.0.27",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.2",
   }
 }

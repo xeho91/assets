@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": false,
+    "importHelpers": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "importsNotUsedAsValues": "error",
+    "lib": ["ESNext", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "$/*": ["source/*"],
+      "$cli/*": ["source/cli/*"],
+      "$components/*": ["source/components/*"]
+    }
+  },
+  "include": [
+    "source/**/*.ts",
+    "source/**/*.d.ts",
+    "source/**/*.svelte"
+  ],
+  "exclude": ["node_modules"]
+}
