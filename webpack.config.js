@@ -22,6 +22,10 @@ export default {
 		plugins: [new TSconfigPaths()],
 	},
 
+	ignoreWarnings: [
+		// Ignore warnings due to yargs dynamic module loading
+		{ module: /node_modules\/yargs/ },
+	],
 
 	module: {
 		rules: [

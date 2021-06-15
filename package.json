@@ -51,10 +51,12 @@
   },
   "dependencies": {
     "@swc/helpers": "^0.2.12",
+    "yargs": "^17.0.1"
   },
   "devDependencies": {
     "@swc/core": "^1.2.60",
     "@types/node": "^15.12.2",
+    "@types/yargs": "^17.0.0",
     "standard-changelog": "^2.0.27",
     "svelte": "^3.38.2",
     "svelte-check": "^2.1.0",
