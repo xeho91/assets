@@ -51,6 +51,10 @@
   },
   "dependencies": {
     "@swc/helpers": "^0.2.12",
+    "@xeho91/colors": "^1.1.0",
+    "chalk": "^4.1.1",
+    "enquirer": "^2.3.6",
+    "listr2": "^3.10.0",
     "yargs": "^17.0.1"
   },
   "devDependencies": {
