@@ -50,14 +50,17 @@
     "release": "standard-changelog --verbose"
   },
   "dependencies": {
+    "@swc/helpers": "^0.2.12",
   },
   "devDependencies": {
+    "@swc/core": "^1.2.60",
     "@types/node": "^15.12.2",
     "standard-changelog": "^2.0.27",
     "svelte": "^3.38.2",
     "svelte-check": "^2.1.0",
     "svelte-loader": "^3.1.1",
     "svelte-preprocess": "^4.7.3",
+    "swc-loader": "^0.1.14",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "tslib": "^2.3.0",
     "typescript": "^4.3.2",

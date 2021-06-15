@@ -1,4 +1,5 @@
 import path from "path";
+import SveltePreprocess from "svelte-preprocess";
 import TSconfigPaths from "tsconfig-paths-webpack-plugin";
 import ShebangPlugin from "webpack-shebang-plugin";
 
@@ -24,6 +25,39 @@ export default {
 
 	module: {
 		rules: [
+			{
+				test: /\.ts$/,
+				exclude: /node_modules/,
+				use: {
+					loader: "swc-loader",
+					options: {
+						jsc: {
+							parser: {
+								syntax: "typescript",
+								tsx: false,
+								dynamicImport: true,
+								decorators: true,
+								importAssertions: true,
+							},
+
+							target: "es2020",
+							loose: true,
+							externalHelpers: true,
+							keepClassNames: true,
+						},
+
+						module: {
+							type: "commonjs",
+							strict: true,
+							strictMode: true,
+							lazy: false,
+						},
+
+						minify: isProduction,
+						sourceMaps: false,
+					},
+				},
+			},
 			{
 				test: /\.svelte$/,
 				exclude: /node_modules/,
