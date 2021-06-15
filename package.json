@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@xeho91/assets",
+  "version": "1.0.0",
+  "description": "xeho91's brand assets with custom CLI for automated tasks.",
+  "keywords": [
+    "brand assets",
+    "avatar",
+    "logo",
+    "automation",
+    "SVG",
+    "SMIL",
+    "animated",
+    "PNG",
+    "Svelte",
+    "CLI"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "author": {
+    "name": "Mateusz Kadlubowski",
+    "email": "xeho91@pm.me",
+    "url": "https://xeho91.com/"
+  },
+  "homepage": "https://github.com/xeho91/assets",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xeho91/assets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xeho91/assets/issues"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "/bin",
+    "/dist"
+  ],
+  "bin": {
+    "xeho91": "./bin/cli.cjs"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "type": "module",
+  "scripts": {
+    "release": "standard-changelog --verbose"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "standard-changelog": "^2.0.27",
+  }
+}
