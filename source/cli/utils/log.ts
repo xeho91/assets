@@ -1,6 +1,8 @@
 import chalk from "chalk";
 
-export const error = chalk.red;
-export const info = chalk.blue;
-export const success = chalk.green;
-export const warning = chalk.yellow;
+const { red, blue, green, yellow } = chalk;
+
+export const error = red;
+export const info = blue;
+export const success = green;
+export const warning = yellow;

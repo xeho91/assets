@@ -38,7 +38,7 @@ export const cmdDefault: CommandModule = {
 					task.output = `Executing the command: "${info(command)}".`;
 				}
 
-				yargs
+				yargs(process.argv.slice(2))
 					.command(cmdGenerate)
 					// .command(cmdExport)
 					.parse([command]);

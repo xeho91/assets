@@ -1,4 +1,6 @@
-import { readJSONSync } from "fs-extra";
+import fsExtra from "fs-extra";
+
+const { readJSONSync } = fsExtra;
 
 import type { Color, ColorsData } from "@xeho91/colors/source/cli/types";
 

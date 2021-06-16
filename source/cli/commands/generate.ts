@@ -64,9 +64,9 @@ export const cmdGenerate: CommandModule = {
 	async handler(argv) {
 		const { all, output, asset } = argv;
 		const context: ContextGenerate = {
-			target: asset as Asset ?? undefined,
+			target: (asset as Asset) ?? undefined,
 			variants: all ? "all" : undefined,
-			outputDir: output as string ?? undefined,
+			outputDir: (output as string) ?? undefined,
 		};
 		const tasks = new Listr<ContextGenerate>([
 			selectAsset,

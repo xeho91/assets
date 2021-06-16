@@ -1,9 +1,11 @@
 import { error, info, success } from "$cli/utils/log";
-import { outputFileSync } from "fs-extra";
+import fsExtra from "fs-extra";
 import { join } from "path";
 
 import type { Asset, ContextGenerate } from "$cli/commands/generate";
 import type { ListrTask } from "listr2";
+
+const { outputFileSync } = fsExtra;
 
 function createFileName(asset: Asset, variant: string) {
 	const fileName = variant

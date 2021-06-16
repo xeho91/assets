@@ -1,15 +1,14 @@
 #!/usr/bin/env node
 
 import yargs from "yargs";
+
 import { cmdDefault } from "$cli/commands/default";
 import { cmdGenerate } from "$cli/commands/generate";
 
-export const cmdMain = yargs
+yargs(process.argv.slice(2))
 	.scriptName("xeho91")
 	.alias("h", "help")
 	.alias("v", "version")
 	.command(cmdDefault)
-	// .command(cmdExport)
-	.command(cmdGenerate);
-
-cmdMain.parse();
+	.command(cmdGenerate)
+	.parse();
