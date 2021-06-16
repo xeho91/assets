@@ -17,25 +17,40 @@ called **[SMIL]**. I have applied it to both assets.
 
 ## Distributable assets
 
-Below there's a preview for default versions of both assets. For more variants,
-head to the [`./dist`](./dist) directory with other possibilities. Such as with
-gradient background, black, white, etc. Inside the directory, you will find the
-assets in SVG format as well as in PNG format.
+Below there's a preview for default versions of both assets -
+[avatar](#avatar-preview) and [logo](#logo-preview).
 
-### Avatar
+For more [possible variants](#possible-variants),
+generate them with my CLI or use them directly from the package.
+They will be located in `./dist` directory.
 
-[!xeho91's avatar](./dist/avatar/svg/xeho91-avatar.svg)
+### Possible variants
 
-### Logo
+At the moment, these variants are possible:
 
-[!xeho91's logo](./dist/logo/svg/xeho91-logo.svg)
+- default _(without gradient background)_,
+- alternative _(uses alternative foreground color)_,
+- with a gradient background,
+- black & white version,
+- without the background for all of the above,
+- and with or without the animations.
+
+At the moment, there's a total of 20 possibilities for each asset.
+
+### Avatar preview
+
+![xeho91's avatar](./examples/xeho91-avatar.svg)
+
+### Logo preview
+
+![xeho91's logo](./examples/xeho91-logo.svg)
 
 ## Components
 
-The components are written in **[Svelte]**.\
-It's effortless to work with it, as it gives many opportunities to make these
-assets more advanced. Both of the components for these assets can be found in
-[`./components/`](./components/) directory.
+The components are written in **[Svelte]**.
+It's effortless to work with this framework, as it gives many opportunities to
+make these assets more advanced.\
+Both of the components for these assets are bundled and be found inside package.
 
 [Svelte]: https://github.com/svelte
 
@@ -70,7 +85,7 @@ coded in **TypeScript** with:
 
 #### Available commands
 
-- [x] `generate [asset]` - where `asset` is either `avatar` or `logo`
+- [x] `generate [asset]` - where the `[asset]` is either `avatar` or `logo`
 - [ ] `export` - waiting for `feDropShadow` to be supported by [librsvg], so I
   could use it with [sharp].
 

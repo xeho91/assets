@@ -39,7 +39,8 @@
   "exports": "./dist/components/bundle.js",
   "files": [
     "/bin",
-    "/dist"
+    "/dist",
+    "/examples"
   ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
