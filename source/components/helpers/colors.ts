@@ -1,12 +1,6 @@
-import fsExtra from "fs-extra";
+import type { Color } from "@xeho91/colors/source/cli/types";
 
-const { readJSONSync } = fsExtra;
-
-import type { Color, ColorsData } from "@xeho91/colors/source/cli/types";
-
-const colors: ColorsData = readJSONSync(
-	"node_modules/@xeho91/colors/dist/colors.json",
-);
+import colors from "@xeho91/colors/dist/colors.json";
 
 /** Returns a string with CSS color using HSLA format, e.g. "hsla(0deg, 0%, 0%, 1)" */
 function getHSLA(colorData: Color) {

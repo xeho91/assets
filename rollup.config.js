@@ -1,6 +1,7 @@
 // Rollup plugins
 import alias from "@rollup/plugin-alias";
 import commonjs from "@rollup/plugin-commonjs";
+import json from "@rollup/plugin-json";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import esbuild from "rollup-plugin-esbuild";
 import shebang from "rollup-plugin-preserve-shebang";
@@ -69,12 +70,13 @@ function getConfig(target) {
 					},
 				],
 			}),
+			json({}),
 			svelte({
 				extensions: [".svelte"],
 				preprocess: SveltePreprocess({}),
 				emitCss: false,
 				compilerOptions: {
-					dev: true,
+					dev: isDevelopment,
 					generate: "ssr",
 				},
 			}),
@@ -96,5 +98,5 @@ function getConfig(target) {
 
 export default [
 	getConfig("cli"),
-	getConfig("components")
+	getConfig("components"),
 ];
