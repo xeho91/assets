@@ -2,8 +2,8 @@
 
 This repository contains my personal brand assets. It includes:
 
-- [avatar](#avatar)
-- [logo](#logo)
+- [**avatar**](#avatar-preview)
+- [**logo**](#logo-preview)
 
 Both of them are built with **SVG** technology in mind for the best quality at
 any image's resolution.\
@@ -50,7 +50,15 @@ At the moment, there's a total of 20 possibilities for each asset.
 The components are written in **[Svelte]**.
 It's effortless to work with this framework, as it gives many opportunities to
 make these assets more advanced.\
-Both of the components for these assets are bundled and be found inside package.
+Both of the components for these assets are bundled and be found inside
+package.
+
+Is possible to import these asset components to your project directly with the
+following code:
+
+```js
+import { Avatar, Logo } from "@xeho91/assets";
+```
 
 [Svelte]: https://github.com/svelte
 
