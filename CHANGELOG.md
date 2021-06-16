@@ -7,6 +7,12 @@ Additionaly, there are emojis, which are based on [Gitmoji] commit guidelines.
 [Conventional Commits]: https://conventionalcommits.org/
 [Gitmoji]: https://gitmoji.dev/
 
+## 1.1.1 (2021-06-16)
+
+### Bug Fixes
+
+* **components:** 🐛  Fix importing `colors.json` ([51bc4aa](https://github.com/xeho91/assets/commit/51bc4aa2b9f4c34a057ed7d7d77cc462dc16dafd))
+
 ## 1.1.0 (2021-06-16)
 
 ### Features
