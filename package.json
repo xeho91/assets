@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package",
   "name": "@xeho91/assets",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "xeho91's brand assets with custom CLI for automated tasks.",
   "keywords": [
     "brand assets",
@@ -57,14 +57,13 @@
     "generate:avatar": "./bin/cli.js generate avatar --all --output ./dist/avatar/svg",
     "generate:logo": "./bin/cli.js generate logo --all --output ./dist/logo/svg",
     "generate:types": "svelte-type-generator && dts-bundle --name components --main ./types/components/index.d.ts && cpy ./types/components/components.d.ts ./dist/",
-    "release": "standard-version"
+    "release": "standard-version --verbose"
   },
   "dependencies": {
     "@xeho91/colors": "^1.2.0",
     "chalk": "^4.1.1",
     "enquirer": "^2.3.6",
     "listr2": "^3.10.0",
-    "standard-version": "^9.3.0",
     "svgo": "2.3.0",
     "yargs": "^17.0.1"
   },
@@ -85,7 +84,7 @@
     "rollup-plugin-esbuild": "^4.5.0",
     "rollup-plugin-preserve-shebang": "^1.0.1",
     "rollup-plugin-svelte": "^7.1.0",
-    "standard-changelog": "^2.0.27",
+    "standard-version": "^9.3.0",
     "svelte": "^3.38.2",
     "svelte-check": "^2.1.0",
     "svelte-preprocess": "^4.7.3",

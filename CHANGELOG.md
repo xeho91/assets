@@ -1,17 +1,18 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits] for commit guidelines.\
-Additionaly, there are emojis, which are based on [Gitmoji] commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-[Conventional Commits]: https://conventionalcommits.org/
-[Gitmoji]: https://gitmoji.dev/
+## 1.2.0 (2021-06-17)
+
+### Features
+
+- **Types:** 🏷️ Added types to the package ([760bc89](https://github.com/xeho91/assets/commit/760bc892257ecf404633830cac4216f506e37840))
 
 ## 1.1.1 (2021-06-16)
 
 ### Bug Fixes
 
-* **components:** 🐛  Fix importing `colors.json` ([51bc4aa](https://github.com/xeho91/assets/commit/51bc4aa2b9f4c34a057ed7d7d77cc462dc16dafd))
+- **components:** 🐛 Fix importing `colors.json` ([51bc4aa](https://github.com/xeho91/assets/commit/51bc4aa2b9f4c34a057ed7d7d77cc462dc16dafd))
 
 ## 1.1.0 (2021-06-16)
 
