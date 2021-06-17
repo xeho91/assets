@@ -1,9 +1,8 @@
-import { error, info, success } from "$cli/utils/log";
+import { error, info, success } from "../../utils/log";
 import fsExtra from "fs-extra";
 import { join } from "path";
 
-import type { Asset, ContextGenerate } from "$cli/commands/generate";
-import type { ListrTask } from "listr2";
+import type { Asset, ContextGenerate, ListrTask } from "../../types";
 
 const { outputFileSync } = fsExtra;
 

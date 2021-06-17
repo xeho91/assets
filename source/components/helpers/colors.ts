@@ -1,6 +1,6 @@
-import type { Color } from "@xeho91/colors/source/cli/types";
-
 import colors from "@xeho91/colors/dist/colors.json";
+
+import type { AssetOptions, Color } from "../types";
 
 /** Returns a string with CSS color using HSLA format, e.g. "hsla(0deg, 0%, 0%, 1)" */
 function getHSLA(colorData: Color) {
@@ -11,9 +11,9 @@ function getHSLA(colorData: Color) {
 	return hsla;
 }
 
-const clairvoyant = getHSLA(colors.brand.clairvoyant);
-const terracotta = getHSLA(colors.brand.terracotta);
-const kilamanjaro = getHSLA(colors.supplementary.kilamanjaro);
+const clairvoyant = getHSLA(colors.brand.clairvoyant as Color);
+const terracotta = getHSLA(colors.brand.terracotta as Color);
+const kilamanjaro = getHSLA(colors.supplementary.kilamanjaro as Color);
 const black = "hsla(0deg, 0% , 0%, 1)";
 const white = "hsla(0deg, 0% , 100%, 1)";
 
@@ -21,7 +21,7 @@ const white = "hsla(0deg, 0% , 100%, 1)";
 export function getGradient({ altForeground }: AssetOptions) {
 	const gradientColors = [
 		clairvoyant,
-		...Object.values(colors.gradient).map((color) => getHSLA(color)),
+		...Object.values(colors.gradient).map((color) => getHSLA(color as Color)),
 		terracotta,
 	];
 
@@ -29,7 +29,9 @@ export function getGradient({ altForeground }: AssetOptions) {
 }
 
 /** Get a CSS hsla color code for foreground color based on asset options */
-export function getColorForeground({ withColors, altForeground }: AssetOptions) {
+export function getColorForeground(
+	{ withColors, altForeground }: AssetOptions,
+) {
 	if (withColors) {
 		if (altForeground) {
 			return clairvoyant;

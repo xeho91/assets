@@ -1,11 +1,11 @@
 <script lang="typescript">
 	import type {
 		CharData,
-		PathData,
+		PreviousChar,
 		PositionX,
-		PositionY
-	} from "$components/helpers/paths";
-	import type { PreviousChar } from "$components/helpers/previousChar";
+		PositionY,
+		PathData,
+	} from "../types";
 
 	export let name: string;
 	export let data: CharData;

@@ -1,18 +1,16 @@
 // Rollup plugins
-import alias from "@rollup/plugin-alias";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import esbuild from "rollup-plugin-esbuild";
 import shebang from "rollup-plugin-preserve-shebang";
 import svelte from "rollup-plugin-svelte";
+// TODO: Configure it when it supports typed components
+// LINK: https://github.com/IBM/sveld/pull/31
+// import sveld from "sveld";
 
-import { resolve } from "node:path";
 import SveltePreprocess from "svelte-preprocess";
 import packageJSON from "./package.json";
-
-const __dirname = new URL(".", import.meta.url).pathname;
-const rootDir = resolve(__dirname);
 
 const isDevelopment = process.env["ROLLUP_WATCH"];
 const isProduction = !process.env["ROLLUP_WATCH"];
@@ -58,18 +56,6 @@ function getConfig(target) {
 
 		plugins: [
 			isCLI && shebang({}),
-			alias({
-				entries: [
-					{
-						find: "$cli",
-						replacement: resolve(rootDir, "./source/cli"),
-					},
-					{
-						find: "$components",
-						replacement: resolve(rootDir, "./source/components"),
-					},
-				],
-			}),
 			json({}),
 			svelte({
 				extensions: [".svelte"],
@@ -77,7 +63,7 @@ function getConfig(target) {
 				emitCss: false,
 				compilerOptions: {
 					dev: isDevelopment,
-					generate: "ssr",
+					generate: isCLI ? "ssr" : "dom",
 				},
 			}),
 			esbuild({
@@ -90,6 +76,7 @@ function getConfig(target) {
 				dedupe: ["svelte"],
 			}),
 			commonjs({}),
+			// isComponents && sveld({}),
 		],
 	};
 

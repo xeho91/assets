@@ -1,28 +1,17 @@
-import { generateSVG } from "$cli/tasks/generate/generateSVG";
-import { optimizeSVG } from "$cli/tasks/generate/optimizeSVG";
-import { saveSVG } from "$cli/tasks/generate/saveSVG";
-import { selectAsset } from "$cli/tasks/generate/selectAsset";
-import { selectVariant } from "$cli/tasks/generate/selectVariant";
+import { generateSVG } from "../tasks/generate/generateSVG";
+import { optimizeSVG } from "../tasks/generate/optimizeSVG";
+import { saveSVG } from "../tasks/generate/saveSVG";
+import { selectAsset } from "../tasks/generate/selectAsset";
+import { selectVariant } from "../tasks/generate/selectVariant";
 import { Listr } from "listr2";
 
-import type { CommandModule } from "yargs";
+import type {
+	Asset,
+	CommandModule,
+	ContextGenerate
+} from "../types";
 
-interface Results {
-	variant: string;
-	svg: string;
-}
-
-export type Asset = "avatar" | "logo";
 const assets: ReadonlyArray<Asset> = ["avatar", "logo"];
-
-export interface ContextGenerate {
-	outputDir?: string;
-	target?: Asset;
-	variants?: "all" | "selected";
-	selectedVariants?: string[];
-	animations?: "only" | "include" | "exclude";
-	results?: Results[];
-}
 
 export const cmdGenerate: CommandModule = {
 	command: "generate [asset]",

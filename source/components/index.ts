@@ -1,14 +1,12 @@
-// Core components
-import Avatar from "$components/Avatar.svelte";
-import Logo from "$components/Logo.svelte";
+// Main components
+export { default as Avatar } from "./main/Avatar.svelte";
+export {default as Logo } from "./main/Logo.svelte";
 
 // Shared components
-import Char from "$components/shared/Char.svelte";
-import CharAnimation from "$components/shared/CharAnimation.svelte";
-import Gradient from "$components/shared/Gradient.svelte";
-import Shadow from "$components/shared/Shadow.svelte";
+export { default as Char } from "./shared/Char.svelte";
+export { default as CharAnimation } from "./shared/CharAnimation.svelte";
+export { default as Gradient } from "./shared/Gradient.svelte";
+export { default as Shadow } from "./shared/Shadow.svelte";
 
 // Data
-import { chars } from "./helpers/paths";
-
-export { Avatar, Char, CharAnimation, chars, Gradient, Logo, Shadow };
+export { chars } from "./helpers/paths";

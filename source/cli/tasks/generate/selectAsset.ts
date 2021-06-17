@@ -1,7 +1,6 @@
-import { info } from "$cli/utils/log";
+import { info } from "../../utils/log";
 
-import type { ListrTask } from "listr2";
-import type { ContextGenerate } from "$cli/commands/generate";
+import type { ContextGenerate, ListrTask } from "../../types";
 
 export const selectAsset: ListrTask = {
 	title: "Selecting the asset to generate... ",

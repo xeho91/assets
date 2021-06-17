@@ -1,8 +1,7 @@
-import { info } from "$cli/utils/log";
-import { possibleVariants, VariantGroup } from "$cli/utils/variants";
+import { info } from "../../utils/log";
+import { possibleVariants } from "../../utils/variants";
 
-import type { ContextGenerate } from "$cli/commands/generate";
-import type { ListrTask } from "listr2";
+import type { ContextGenerate, ListrTask, VariantGroup } from "../../types";
 
 function createMessage(fileName: string) {
 	const description = [];

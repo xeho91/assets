@@ -1,10 +1,9 @@
 <script lang="typescript">
+	import type { GradinetDirections } from "../types";
+
 	export let id: string;
 	export let colors: string[];
-
-	type Directions = "vertical" | "diagonal" | "horizontal";
-
-	export let gradientDirection: Directions = "vertical";
+	export let gradientDirection: GradinetDirections = "vertical";
 
 	const getGradientTransform = () => {
 		switch(gradientDirection) {

@@ -1,5 +1,3 @@
-export type VariantGroup = "default"  | "alternative" | "white" | "black";
-
 export const possibleVariants = [
 	"default",
 	"default|gradient",

@@ -2,8 +2,8 @@
 
 import yargs from "yargs";
 
-import { cmdDefault } from "$cli/commands/default";
-import { cmdGenerate } from "$cli/commands/generate";
+import { cmdDefault } from "./commands/default";
+import { cmdGenerate } from "./commands/generate";
 
 yargs(process.argv.slice(2))
 	.scriptName("xeho91")

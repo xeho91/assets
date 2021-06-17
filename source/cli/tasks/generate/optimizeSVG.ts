@@ -1,9 +1,7 @@
-import { error, success } from "$cli/utils/log";
+import { error, success } from "../../utils/log";
 import { optimize } from "svgo";
 
-import type { ContextGenerate } from "$cli/commands/generate";
-import type { ListrTask } from "listr2";
-import type { OptimizeOptions } from "svgo";
+import type { ContextGenerate, ListrTask, OptimizeOptions } from "../../types";
 
 export const optimizeSVG: ListrTask = {
 	title: "Optimizing the SVG output(s)... ",

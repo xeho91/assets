@@ -1,28 +1,33 @@
 <script lang="typescript">
-	import { x } from "./helpers/paths";
-	import Char from "./shared/Char.svelte";
-	import CharAnimation from "./shared/CharAnimation.svelte";
-	import Gradient from "$components/shared/Gradient.svelte";
-	import Shadow from "./shared/Shadow.svelte";
+	// Shared components
+	import Char from "../shared/Char.svelte";
+	import CharAnimation from "../shared/CharAnimation.svelte";
+	import Gradient from "../shared/Gradient.svelte";
+	import Shadow from "../shared/Shadow.svelte";
+
+	// Helpers
+	import { x } from "../helpers/paths";
 	import {
 		getColorBackground,
 		getColorForeground,
 		getColorShadow,
 		getGradient,
-	} from "$components/helpers/colors";
-	import { getPreviousChar } from "./helpers/previousChar";
-	import { getDuration } from "./helpers/animation";
+	} from "../helpers/colors";
+	import { getDuration, getPreviousChar } from "../helpers/animation";
+
+	import type { AssetOptions }from "../types";
+
+	export let options: AssetOptions;
+	const { withBackground, backgroundType, withAnimation } = options;
 
 	export const id = "xeho91-avatar";
 	export const size = 630;
 	export const frameSize = 20;
 
-	export let options: AssetOptions;
+	const circleSize = size / 2;
 
 	const colorForeground = getColorForeground(options);
 	const colorBackground = getColorBackground(id, options);
-	const { withBackground, backgroundType, withAnimation } = options;
-	const circleSize = size / 2;
 </script>
 
 <svg

@@ -1,17 +1,29 @@
-import { chars } from "$components/helpers/paths";
+import { chars } from "../helpers/paths";
+
+import type { AssetOptions, PreviousChar } from "../types";
 
 function getCharactersCount() {
-	let count = 0;
-
-	Object.keys(chars).forEach((charName) => {
-		count += Object.values(chars[charName]).length;
-	});
-
-	return count;
+	return Object.keys(chars).reduce((accumulator, currentValue) => {
+		return accumulator + Object.values(chars[currentValue]).length;
+	}, 0);
 }
 
 export function getDuration({ animationDuration }: AssetOptions) {
-	animationDuration = animationDuration ?? 3000;
+	const totalDuration = animationDuration ?? 3000;
 
-	return animationDuration / getCharactersCount();
+	return totalDuration / getCharactersCount();
+}
+
+
+
+export function getPreviousChar(index: number) {
+	if (index === 0) {
+		return null;
+	} else {
+		const name = Object.keys(chars)[index - 1];
+		const paths = Object.keys(chars[name]);
+		const lastPath = paths[paths.length - 1];
+
+		return { name, lastPath } as PreviousChar;
+	}
 }

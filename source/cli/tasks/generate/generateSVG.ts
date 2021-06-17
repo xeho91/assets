@@ -1,10 +1,13 @@
-import { error, success } from "$cli/utils/log";
-import Avatar from "$components/Avatar.svelte";
-import Logo from "$components/Logo.svelte";
+import { error, success } from "../../utils/log";
+import Avatar from "../../../components/main/Avatar.svelte";
+import Logo from "../../../components/main/Logo.svelte";
 
-import type { ListrTask } from "listr2";
-import type { ContextGenerate } from "$cli/commands/generate";
-import type { SvelteComponentTyped } from "svelte/internal";
+import type {
+	AssetOptions,
+	ListrTask,
+	ContextGenerate,
+	SvelteComponentTyped,
+} from "../../types";
 
 function getOptions(variant: string): AssetOptions {
 	return {

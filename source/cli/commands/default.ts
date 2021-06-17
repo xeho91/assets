@@ -1,10 +1,10 @@
 // import { cmdExport } from "$cli/commands/export";
-import { cmdGenerate } from "$cli/commands/generate";
-import { info } from "$cli/utils/log";
+import { cmdGenerate } from "./generate";
+import { info } from "../utils/log";
 import { Listr } from "listr2";
 import yargs from "yargs";
 
-import type { CommandModule } from "yargs";
+import type { CommandModule } from "../types";
 
 export const cmdDefault: CommandModule = {
 	command: "$0",

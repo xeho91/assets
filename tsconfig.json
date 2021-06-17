@@ -1,7 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "noEmit": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "declarationDir": "types/",
+    "declarationMap": true,
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -14,13 +17,7 @@
     "importsNotUsedAsValues": "error",
     "lib": ["ESNext", "DOM"],
     "module": "ESNext",
-    "moduleResolution": "node",
-    "baseUrl": ".",
-    "paths": {
-      "$/*": ["source/*"],
-      "$cli/*": ["source/cli/*"],
-      "$components/*": ["source/components/*"]
-    }
+    "moduleResolution": "node"
   },
   "include": [
     "source/**/*.ts",

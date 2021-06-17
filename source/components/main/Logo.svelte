@@ -1,19 +1,25 @@
 <script lang="typescript">
-	import { chars } from "./helpers/paths";
-	import Char from "./shared/Char.svelte";
-	import CharAnimation from "./shared/CharAnimation.svelte";
-	import Gradient from "./shared/Gradient.svelte";
-	import Shadow from "./shared/Shadow.svelte";
+	// Shared components
+	import Char from "../shared/Char.svelte";
+	import CharAnimation from "../shared/CharAnimation.svelte";
+	import Gradient from "../shared/Gradient.svelte";
+	import Shadow from "../shared/Shadow.svelte";
+
+	// Helpers
+	import { chars } from "../helpers/paths";
 	import {
 		getColorBackground,
 		getColorForeground,
 		getColorShadow,
 		getGradient,
-	} from "./helpers/colors";
-	import { getPreviousChar } from "$components/helpers/previousChar";
-	import { getDuration } from "$components/helpers/animation";
+	} from "../helpers/colors";
+	import { getDuration, getPreviousChar } from "../helpers/animation";
+
+	import type { AssetOptions } from "../types";
 
 	export let options: AssetOptions;
+
+	const { withBackground, backgroundType, withAnimation } = options;
 
 	export const id = "xeho91-logo";
 	export const width = 1200;
@@ -21,7 +27,6 @@
 
 	let colorBackground = getColorBackground(id, options);
 	let colorForeground = getColorForeground(options);
-	const { withBackground, backgroundType, withAnimation } = options;
 </script>
 
 <svg
