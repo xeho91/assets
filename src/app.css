@@ -1,0 +1,17 @@
+@import "@xeho91/colors";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+
+	background-color: var(--color-calico);
+}
+
+#svelte {
+	width: 100%;
+	height: 100%;
+}

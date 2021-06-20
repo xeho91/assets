@@ -1,6 +1,6 @@
-import { chars } from "../helpers/paths";
+import { chars } from "./chars";
 
-import type { AssetOptions, PreviousChar } from "../types";
+import type { AnimationsOptions, PreviousChar } from "../types";
 
 function getCharactersCount() {
 	return Object.keys(chars).reduce((accumulator, currentValue) => {
@@ -8,13 +8,11 @@ function getCharactersCount() {
 	}, 0);
 }
 
-export function getDuration({ animationDuration }: AssetOptions) {
-	const totalDuration = animationDuration ?? 3000;
-
-	return totalDuration / getCharactersCount();
+export function getCharAnimationDuration(
+	duration: AnimationsOptions["duration"],
+) {
+	return duration / getCharactersCount();
 }
-
-
 
 export function getPreviousChar(index: number) {
 	if (index === 0) {

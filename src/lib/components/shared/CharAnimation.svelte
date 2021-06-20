@@ -5,7 +5,7 @@
 		PositionX,
 		PositionY,
 		PathData,
-	} from "../types";
+	} from "../../types";
 
 	export let name: string;
 	export let data: CharData;

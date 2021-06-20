@@ -1,5 +1,5 @@
 <script lang="typescript">
-	import type { CharData } from "../types";
+	import type { CharData } from "../../types";
 
 	export let name: string;
 	export let data: CharData;

@@ -1,4 +1,4 @@
-import type { Chars, CharData } from "../types";
+import type { CharData, Chars } from "../types";
 
 export const x: CharData = {
 	left: {
@@ -98,4 +98,4 @@ export const one: CharData = {
 	},
 };
 
-export const chars: Chars = { x, e, h, o, nine, one };
+export const chars: Chars = { x: x, e, h, o, nine, one };

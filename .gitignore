@@ -1,6 +1,5 @@
 node_modules/
 
-# Build files
-bin/
-dist/
-types/
+# Build files & dir
+.svelte-kit/
+package/

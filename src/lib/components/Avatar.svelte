@@ -1,24 +1,25 @@
 <script lang="typescript">
-	// Shared components
-	import Char from "../shared/Char.svelte";
-	import CharAnimation from "../shared/CharAnimation.svelte";
-	import Gradient from "../shared/Gradient.svelte";
-	import Shadow from "../shared/Shadow.svelte";
+	import Char from "./shared/Char.svelte";
+	import CharAnimation from "./shared/CharAnimation.svelte";
+	import Gradient from "./shared/Gradient.svelte";
 
-	// Helpers
-	import { x } from "../helpers/paths";
 	import {
+		x as charXdata,
 		getColorBackground,
 		getColorForeground,
-		getColorShadow,
+		getShadow,
 		getGradient,
-	} from "../helpers/colors";
-	import { getDuration, getPreviousChar } from "../helpers/animation";
+		getCharAnimationDuration,
+		getPreviousChar,
+		optionsDefault,
+	} from "../helpers";
 
-	import type { AssetOptions }from "../types";
+	import type { ComponentOptions } from "../types";
 
-	export let options: AssetOptions;
-	const { withBackground, backgroundType, withAnimation } = options;
+	export let color: ComponentOptions["color"] = optionsDefault.color;
+	export let background: ComponentOptions["background"] = optionsDefault.background;
+	export let shadow: ComponentOptions["shadow"] = optionsDefault.shadow;
+	export let animation: ComponentOptions["animation"] = undefined;
 
 	export const id = "xeho91-avatar";
 	export const size = 630;
@@ -26,8 +27,9 @@
 
 	const circleSize = size / 2;
 
-	const colorForeground = getColorForeground(options);
-	const colorBackground = getColorBackground(id, options);
+	$: colorForeground = getColorForeground(color);
+	$: colorBackground = getColorBackground(background, color, id);
+	$: dropShadow = getShadow(shadow);
 </script>
 
 <svg
@@ -39,12 +41,10 @@
 	preserveAspectRatio="xMinYMin meet"
 >
 	<title id="{id}_title">xeho91's avatar</title>
-	<desc id="{id}_description">It contains logomark - which is a letter "X" in
-	the circle with a frame. The letter painted in the style of quickly using a
-	paintbrush on the wall.</desc>
+	<desc id="{id}_description">It contains logomark - which is a letter "X" in the circle with a frame. The letter painted in the style of quickly using a paintbrush on the wall.</desc>
 
 	<defs>
-		{#if withBackground}
+		{#if background !== "none"}
 			<circle
 				id="{id}_background"
 				cx={circleSize}
@@ -71,18 +71,16 @@
 				" />
 		</symbol>
 
-		{#if backgroundType === "gradient"}
-			<Gradient {id} colors={getGradient(options)} />
+		{#if background === "gradient"}
+			<Gradient {id} colors={getGradient(color)} />
 		{/if}
 
-		<Shadow {id} color={getColorShadow(options)} />
-
-		{#if withAnimation}
+		{#if animation}
 			<CharAnimation
 				name="x"
-				data={x}
+				data={charXdata}
 				color={colorForeground}
-				duration={getDuration(options)}
+				duration={getCharAnimationDuration(animation?.duration)}
 				prevChar={getPreviousChar(0)}
 			/>
 		{/if}
@@ -91,26 +89,18 @@
 		<symbol id="{id}_logomark">
 			<Char
 				name="x"
-				data={x}
-				animated={withAnimation}
+				data={charXdata}
+				animated={animation ? true : false}
 				transform="matrix(2.6178896,0,0,2.6178896,-444.98648,-588.03971)"
 			/>
 		</symbol>
 	</defs>
 
-	{#if withBackground}
+	{#if background !== "none"}
 		<use href="#{id}_background" fill={colorBackground} />
 	{/if}
 
-	<use
-		href="#{id}_frame"
-		fill={colorForeground}
-		filter="url(#{id}_shadow)"
-	/>
+	<use href="#{id}_frame" fill={colorForeground} filter={dropShadow} />
 
-	<use
-		href="#{id}_logomark"
-		fill={colorForeground}
-		filter="url(#{id}_shadow)"
-	/>
+	<use href="#{id}_logomark" fill={colorForeground} filter={dropShadow} />
 </svg>

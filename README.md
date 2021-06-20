@@ -15,33 +15,11 @@ called **[SMIL]**. I have applied it to both assets.
 
 [SMIL]: https://developer.mozilla.org/en-US/docs/Web/SVG/SVG_animation_with_SMIL
 
-## Distributable assets
-
-Below there's a preview for default versions of both assets -
-[avatar](#avatar-preview) and [logo](#logo-preview).
-
-For more [possible variants](#possible-variants),
-generate them with my CLI or use them directly from the package.
-They will be located in `./dist` directory.
-
-### Possible variants
-
-At the moment, these variants are possible:
-
-- default _(without gradient background)_,
-- alternative _(uses alternative foreground color)_,
-- with a gradient background,
-- black & white version,
-- without the background for all of the above,
-- and with or without the animations.
-
-At the moment, there's a total of 20 possibilities for each asset.
-
-### Avatar preview
+## Avatar preview
 
 ![xeho91's avatar](./examples/xeho91-avatar.svg)
 
-### Logo preview
+## Logo preview
 
 ![xeho91's logo](./examples/xeho91-logo.svg)
 
@@ -51,54 +29,20 @@ The components are written in **[Svelte]**.
 It's effortless to work with this framework, as it gives many opportunities to
 make these assets more advanced.\
 Both of the components for these assets are bundled and be found inside
-package.
+package. Below there's an example usage:
 
-Is possible to import these asset components to your project directly with the
-following code:
+```svelte
+<script>
+  import Avatar from "@xeho91/assets/components/Avatar.svelte";
+  import Logo from "@xeho91/assets/components/Logo.svelte";
+</script>
 
-```js
-import { Avatar, Logo } from "@xeho91/assets";
+<Avatar color="black" background="none" />
+<Logo color="default" background="gradient" animations={{ duration: 3000 }} />
 ```
 
-[Svelte]: https://github.com/svelte
-
-## CLI
-
-To speed up distribution, development of the assets, etc. I wrote CLI, which is
-coded in **TypeScript** with:
-
-- [yargs]
-- [Listr2]
-
-[yargs]: https://github.com/yargs/yargs
-[Listr2]: https://github.com/cenk1cenk2/listr2
-
-### CLI Usage
-
-1. Install the package globally with any Node.JS package manager of your
-   choice. I use [pnpm](https://github.com/pnpm/pnpm).
-
-   ```sh
-   pnpm i -g @xeho91/assets
-   ```
-
-2. Call the command to print the help with available commands/flags:
-
-   ```sh
-   xeho91 --help
-   ```
-
-3. Or if you're lazy, just type command `xeho91`, and it will ask you what do
-   you want to do.
-
-#### Available commands
-
-- [x] `generate [asset]` - where the `[asset]` is either `avatar` or `logo`
-- [ ] `export` - waiting for `feDropShadow` to be supported by [librsvg], so I
-  could use it with [sharp].
-
-[librsvg]: https://gitlab.gnome.org/GNOME/librsvg/-/issueos/743
-[sharp]: https://github.com/lovell/sharp
+[Svelte]: https://github.com/sveltejs/svelte
+[TypeScript]: https://github.com/microsoft/typescript
 
 ## License
 
