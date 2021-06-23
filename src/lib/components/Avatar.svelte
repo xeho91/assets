@@ -39,6 +39,7 @@
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 0 {size} {size}"
 	preserveAspectRatio="xMinYMin meet"
+	class={$$props.class}
 >
 	<title id="{id}_title">xeho91's avatar</title>
 	<desc id="{id}_description">It contains logomark - which is a letter "X" in the circle with a frame. The letter painted in the style of quickly using a paintbrush on the wall.</desc>
