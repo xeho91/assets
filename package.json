@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package",
   "name": "@xeho91/assets",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "xeho91's brand assets written in Svelte and TypeScript.",
   "keywords": [
     "brand assets",
