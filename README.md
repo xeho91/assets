@@ -1,5 +1,8 @@
 # xeho91's brand assets
 
+> **Warning**:
+> A new version of this project is continued at https://github.com/xeho91/brand
+
 This repository contains my personal brand assets. It includes:
 
 - [**avatar**](#avatar-preview)
